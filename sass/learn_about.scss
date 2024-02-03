@@ -1,0 +1,136 @@
+@use "./media_query.scss" as *;
+
+article {
+  padding: {
+    top: 30px;
+    inline: 30px;
+    bottom: 50px;
+  }
+  background: black;
+  color: white;
+  box-shadow: 0px -45px 58px 52px black;
+  .about-list {
+    display: grid;
+    gap: 70px;
+    .about-title {
+      text-align: center;
+      h1 {
+        font: {
+          size: 28px;
+          family: Arial, Helvetica, sans-serif;
+          weight: 100;
+        }
+      }
+      p {
+        padding: {
+          top: 29px;
+        }
+        font: {
+          size: 14px;
+          family: Arial;
+        }
+        line-height: 22px;
+        color: #d5d5d5;
+      }
+      .btn {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+        .btn-home-title {
+          cursor: pointer;
+          border: hidden;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          padding: {
+            block: 12px;
+            inline: 15px;
+          }
+          font-size: 14px;
+          background: transparent;
+          background-color: #ffffff57;
+          color: white;
+          border-radius: 2px;
+          ion-icon {
+            transition: transform .4s;
+          }
+          &:hover ion-icon {
+            transform: translateX(5px);
+          }
+        }
+      }
+    }
+    li {
+      .img-about {
+        figure {
+          aspect-ratio: var(--width) / var(--height);
+          overflow: hidden;
+          img {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            transition: transform .4s;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include clint(mobile) {
+  article {
+    padding-inline: 40px;
+  }
+}
+
+@include clint(tablet) {
+  article {
+    padding-inline: 60px;
+    .about-list {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      .about-title {
+        text-align: left;
+        .btn {
+          justify-content: left;
+        }
+      }
+    }
+  }
+}
+
+@include clint(large) {
+  article {
+    padding-inline: 80px;
+  }
+}
+
+@include clint(larger) {
+  article {
+    padding-inline: 150px;
+    .about-list {
+      gap: 189px;
+      .about-title {
+        h1 {
+          font-size: 35px;
+          width: 379px;
+        }
+        p {
+          font-size: 15px;
+        }
+        .btn {
+          margin-top: 35px;
+          .btn-home-title {
+            padding-block: 13px;
+            padding-inline: 20px;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

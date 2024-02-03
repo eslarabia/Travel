@@ -1,0 +1,29 @@
+footer {
+  .back-top-btn {
+    position: fixed;
+    background-color: #70707099;
+    bottom: 15px;
+    color: white;
+    right: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    transition: .4s;
+    display: hidden;
+    transform: translateX(159%);
+    border-radius: 5px;
+    &.slide {
+      visibility: visible;
+      // opacity: 1;
+      transform: translateX(0%);
+    }
+    &:hover {
+      background: rgba(255, 0, 0, 0.8117647059);
+    }
+    ion-icon {
+      font-size: 14px;
+    }
+  }
+}

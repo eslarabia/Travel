@@ -1,0 +1,154 @@
+@use "./media_query.scss" as *;
+
+footer {
+  padding-inline: 30px;
+  background-color: #1c1c1c;
+  color: white;
+  .footer-top {
+    padding: {
+      top: 40px;
+      bottom: 100px;
+    }
+    .footer-top-list {
+      li {
+        .logo {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          h1 {
+            font: {
+              size: 20px;
+              family: 'Arial';
+            }
+          }
+        }
+        p {
+          font: {
+            size: 13px;
+            family: 'Arial';
+            weight: 100;
+          }
+          padding-top: 20px;
+        }
+      }
+      li {
+        .lists-href {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 30px;
+          padding-top: 48px;
+          li {
+            h3 {
+              font: {
+                size: 14px;
+                family: 'Arial';
+                weight: 100;
+              }
+              padding-bottom: 20px;
+            }
+            .href {
+              display: flex;
+              flex-direction: column;
+              gap: 13px;
+              a {
+                color: #b2b2b2;
+                font: {
+                  size: 13px;
+                  family: 'Arial';
+                }
+                &:hover {
+                  color: #cbcbcb;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-end {
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    .footer-end-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      li {
+        a {
+          ion-icon {
+            color: white;
+            font-size: 16px;
+            transition:  transform .4s;
+            &:hover {
+              transform: translateY(-3px);
+            }
+          }
+        }
+      }
+    }
+    p {
+      text-align: center;
+      font: {
+        size: 13px;
+        family: 'Arial';
+      }
+      span {
+        color: #2773e9;
+      }
+    }
+  }
+}
+
+@include clint(mobile) {
+  footer {
+    padding-inline: 40px;
+  }
+}
+
+@include clint(tablet) {
+  footer {
+    padding-inline: 60px;
+    .footer-top {
+      padding: {
+        top: 67px;
+        bottom: 57px;
+      }
+      .footer-top-list {
+        li {
+          .lists-href {
+            grid-template-columns: 1fr 1fr 1fr;
+          }
+        }
+      }
+    }
+    .footer-end {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+@include clint(large) {
+  footer {
+    padding-inline: 80px;
+    .footer-top {
+      .footer-top-list {
+        li {
+          .lists-href {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include clint(larger) {
+  footer {
+    padding-inline: 150px;
+  }
+}

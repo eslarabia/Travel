@@ -1,0 +1,339 @@
+/// Import files in sass
+@use "./sass/media_query.scss" as *;
+@use "./sass/img-section.scss" as *;
+@use "./sass/mixins_animation.scss" as *;
+@use "./sass/learn_about.scss" as *;
+@use "./sass/Popular-section.scss" as *;
+@use "./sass/Explore-section.scss" as *;
+@use "./sass/Contact-section.scss" as *;
+@use "./sass/footer.scss" as *;
+@use "./sass/button-scroll.scss" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Belanosima:wght@400;600&family=Caveat&family=Gloria+Hallelujah&family=Josefin+Sans:ital,wght@0,200;1,300&family=Playpen+Sans&family=Roboto+Condensed:wght@300;400&family=Rubik+Glitch+Pop&family=Shadows+Into+Light&family=Tilt+Neon&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Belanosima:wght@400;600&family=Caveat:wght@400..700&family=Gloria+Hallelujah&family=Josefin+Sans:ital,wght@0,200;1,300&family=Playpen+Sans&family=Roboto+Condensed:wght@300;400&family=Rubik+Glitch+Pop&family=Shadows+Into+Light&family=Tilt+Neon&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  background-image: url(img-travel/home-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: calc(100vh - 0px);
+  .nav {
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: {
+      inline: 20px;
+      block: 17px;
+    }
+    &.slide {
+      backdrop-filter: blur(10px);
+      animation: header 0.5s ease forwards;
+      @include images(header) {
+        from {
+          transform: translateY(-100px);
+        } to {
+          transform: translateY(0px);
+        }
+      }
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      ion-icon {
+        color: white;
+        font-size: 20px;
+      }
+      h1 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    }
+    .navbar {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-toggle-btn {
+      display: flex;
+      align-items: center;
+      border: hidden;
+      background-color: transparent;
+      ion-icon {
+        cursor: pointer;
+        font-size: 20px;
+        color: white;
+      }
+    }
+    .Toggle {
+      display: flex;
+      justify-content: end;
+      ion-icon {
+        color: white;
+        border-bottom-left-radius: 10px;
+        padding: 2px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+        &:hover {
+          background: #ff0000cf;
+        }
+      }
+    }
+    .navbar-link {
+      position: fixed;
+      top: 0px;
+      left: 0;
+      background-image: linear-gradient(to bottom, black 20%, rgba(0, 0, 0, 0.5215686275));
+      box-shadow: -25px 10px 8px 10px #00000085;
+      width: 100%;
+      padding: 10px 10px 25px 10px;
+      text-align: center;
+      z-index: 1;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      list-style: none;
+      a {
+        position: relative;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        &::after {
+          content: " ";
+          position: absolute;
+          top: 16px;
+          left: 0;
+          width: 0;
+          border-bottom: 3px solid white;
+          height: 0;
+          border-top-right-radius: 123px;
+          border-bottom-right-radius: 50px;
+          transition-duration: 1.9s;
+          transition-duration: 1s;
+          transition-timing-function: linear;
+        }
+        &:hover::after {
+          width: 24px;
+          height: 2px;
+        }
+        &.scroll::after {
+          width: 24px;
+          height: 2px;
+        }
+      }
+    }
+  }
+  .home-section {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: {
+      inline: 20px;
+    }
+    span {
+      color: white;
+      font: {
+        size: 15px;
+        family: "Allura", cursive;
+      }
+    } h1 {
+      color: white;
+      font: {
+        size: 40px;
+        family: "Rubik Glitch Pop", system-ui;
+        weight: 100;
+      }
+      padding: {
+        block: 10px;
+      }
+    } p {
+      color: #e4e4e4;
+      font: {
+        size: 18px;
+        family: "Allura", cursive;
+      }
+    } .btn {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 45px;
+      .btn-home-title {
+        cursor: pointer;
+        border: hidden;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: {
+          block: 10px;
+          inline: 20px;
+        }
+        background: transparent;
+        background-color: #ffffff57;
+        color: white;
+        border-radius: 2px;
+        ion-icon {
+          transition: transform .4s;
+        }
+        &:hover ion-icon {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar-link {
+  transform: translateY(-230px);
+  transition-duration: 0.4s;
+}
+.navbar-link.active {
+  transform: translateY(0px);
+}
+
+.nav-toggle-btn.active {
+  display: none;
+}
+
+@mixin parent($size) {
+  padding-inline: $size;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(160, 160, 160);
+}
+
+@include clint(mobile) {
+  header {
+    .nav {
+      @include parent(40px);
+    }
+    .home-section {
+      @include parent(40px);
+    }
+  }
+}
+
+@include clint(tablet) {
+  header {
+    .nav {
+      @include parent(60px);
+      .links {
+          flex-direction: row;
+      }
+      .Toggle {
+        display: none;
+      }
+      .navbar-link {
+        position: unset;
+        backdrop-filter: unset;
+        padding: 0;
+        width: fit-content;
+        transform: translateY(0);
+        background-image: unset;
+        box-shadow: unset;
+      }
+      .nav-toggle-btn {
+        display: none;
+      }
+      .links {
+        gap: 33px;
+      }
+    }
+    .home-section {
+      @include parent(60px);
+    }
+  }
+}
+
+@include clint(large) {
+  header {
+    .nav {
+      @include parent(80px);
+      .logo {
+        h1 {
+          font-size: 22px;
+        }
+      }
+      .links {
+        a {
+          font-size: 14px;
+        }
+      }
+    }
+    .home-section {
+      @include parent(80px);
+      h1 {
+        font-size: 55px
+      }
+      span {
+        font-size: 19px;
+      }
+      p {
+        font-size: 22px;
+      }
+      .btn {
+        .btn-home-title {
+          padding-block: 12px;
+          padding-inline: 25px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@include clint(larger) {
+  header {
+    .nav {
+      @include parent(150px);
+    }
+    .home-section {
+      @include parent(150px);
+    }
+  }
+}

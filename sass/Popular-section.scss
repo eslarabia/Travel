@@ -1,0 +1,121 @@
+@use "./media_query.scss" as *;
+
+.section-title {
+  background-color: black;
+  color: white;
+  padding: {
+    top: 40px;
+    inline: 30px;
+    bottom: 50px;
+  }
+  .Popular-list-title {
+    display: grid;
+    gap: 58px;
+    li {
+      display: flex;
+      justify-content: center;
+      h1 {
+        text-align: center;
+        width: 260px;
+        font {
+          size: 26px;
+        }
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 100;
+        line-height: 32px;
+      }
+    }
+    li {
+      .Popular-list {
+        display: grid;
+        gap: 30px;
+        .card {
+          .figure-img {
+            aspect-ratio: var(--width) / var(--height);
+            object-fit: cover;
+            margin-bottom: 10px;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              transition: transform .4s;
+            }
+          }
+          .div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            p {
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 15px;
+            }
+            span {
+              font-size: 15px;
+              display: flex;
+              gap: 4px;
+              font-family: Arial, Helvetica, sans-serif;
+              color: #b1b1b1;
+            }
+          }
+          &:hover {
+            img {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include clint(mobile) {
+  .section-title {
+    padding-inline: 40px;
+    .Popular-list-title {
+      li {
+        .Popular-list {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+}
+
+@include clint(tablet) {
+  .section-title {
+    padding-inline: 60px;
+    .Popular-list-title {
+      li {
+        h1 {
+          font-size: 28px;
+          line-height: 41px;
+          width: 390px;
+        }
+      }
+      li {
+        .Popular-list {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+}
+
+@include clint(large) {
+  .section-title {
+    padding-inline: 80px;
+    .Popular-list-title {
+      li {
+        .Popular-list {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+    }
+  }
+}
+
+@include clint(larger) {
+  .section-title {
+    padding-inline: 150px;
+  }
+}

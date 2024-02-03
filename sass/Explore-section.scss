@@ -1,0 +1,139 @@
+@use "./sass/media_query.scss" as *;
+
+.Explore-section {
+  .explore-img {
+    background-image: url("img-travel/explore-beach.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 66vh;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+    &::after {
+      content: " ";
+      position: absolute;
+      top: -76px;
+      left: 0;
+      box-shadow: 0px 84px 45px 52px black;
+      width: 100%;
+    }
+    &::before {
+      content: " ";
+      position: absolute;
+      bottom: 42px;
+      left: 0;
+      box-shadow: 0px 39px 48px 51px black;
+      width: 100%;
+    }
+  }
+  .Explore-title {
+    position: relative;
+    background-color: black;
+    color: white;
+    padding: {
+      top: 35px;
+      inline: 30px;
+    }
+    text-align: center;
+    .clint-three {
+      transform: translateY(-84px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .clint-one {
+        h1 {
+          font: {
+            size: 23px;
+            family: 'Arial';
+            weight: 100;
+          }
+          line-height: 32px;
+        }
+        > p {
+          font: {
+            size: 14px;
+            family: 'Arial';
+          }
+          padding: {
+            top: 20px;
+            bottom: 23px;
+          }
+          line-height: 22px;
+          color: #c3c3c3;
+        }
+      }
+      .clint-two {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+        }
+        p {
+          font: {
+            size: 13px;
+            family: 'Arial';
+          }
+          color: #c3c3c3;
+        }
+      }
+    }
+  }
+}
+
+@include clint(mobile) {
+  .Explore-section {
+    .Explore-title {
+      padding-inline: 40px;
+    }
+  }
+}
+
+@include clint(tablet) {
+  .Explore-section {
+    .Explore-title {
+      padding-inline: 60px;
+      .clint-three {
+        flex-direction: unset;
+        justify-content: space-between;
+        .clint-one {
+          text-align: justify;
+          p {
+            width: 456px;
+          }
+        }
+        .clint-two {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+@include clint(large) {
+  .Explore-section {
+    .Explore-title {
+      padding-inline: 80px;
+    }
+  }
+}
+
+@include clint(larger) {
+  .Explore-section {
+    .Explore-title {
+      padding-inline: 150px;
+      .clint-three {
+        .clint-one {
+          h1 {
+            font-size: 26px;
+          }
+        }
+      }
+    }
+  }
+}
